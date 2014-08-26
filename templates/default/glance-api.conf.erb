@@ -44,6 +44,15 @@ sql_connection = <%= @sql_connection %>
 # The default value is false.
 show_image_direct_url = <%= node["openstack"]["image"]["api"]["show_image_direct_url"] %>
 
+<% if node["openstack"]["image"]["supported_formats"]["container"] %>
+# Supported values for the 'container_format' image attribute are: ami,ari,aki,bare,ovf
+container_formats = <%= node["openstack"]["image"]["supported_formats"]["container"] %>
+<% end %>
+<% if node["openstack"]["image"]["supported_formats"]["disk"] %>
+# Supported values for the 'disk_format' image attribute are: ami,ari,aki,vhd,vmdk,raw,qcow2,vdi,iso
+disk_formats = <%= node["openstack"]["image"]["supported_formats"]["disk"] %>
+<% end %>
+
 # ================= Syslog Options ============================
 
 <% if node["openstack"]["image"]["syslog"]["use"] %>

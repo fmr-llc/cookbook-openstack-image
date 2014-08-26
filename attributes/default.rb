@@ -103,6 +103,10 @@ default['openstack']['image']['upload_image']['cirros'] = 'http://download.cirro
 # more images available at https://github.com/rackerjoe/oz-image-build
 default['openstack']['image']['upload_image']['centos'] = 'http://c250663.r63.cf1.rackcdn.com/centos60_x86_64.qcow2'
 
+# Default system configured formats will be used
+default["openstack"]["image"]["supported_formats"]["container"] = nil
+default["openstack"]["image"]["supported_formats"]["disk"] = nil
+
 # logging attribute
 default['openstack']['image']['syslog']['use'] = false
 default['openstack']['image']['syslog']['facility'] = 'LOG_LOCAL2'
