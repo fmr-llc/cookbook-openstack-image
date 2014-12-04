@@ -73,6 +73,9 @@ admin_tenant_name = <%= node["openstack"]["image"]["service_tenant_name"] %>
 admin_user = <%= node["openstack"]["image"]["service_user"] %>
 admin_password = <%= @service_pass %>
 signing_dir = <%= node["openstack"]["image"]["registry"]["auth"]["cache_dir"] %>
+<% if node["openstack"]["endpoints"]["identity-api"]["insecure"] %>
+insecure = True
+<% end -%>
 
 [paste_deploy]
 flavor = keystone
